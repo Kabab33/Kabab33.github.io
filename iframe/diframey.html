@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+    <body>
+<a href="index.html"><img src="https://web.archive.org/web/20090808000611/http://www.geocities.com/dragonball182002/back.gif"></img></a>
+		<form onsubmit="makeiframe();return false">
+		<input type="url" name="htmlInput" id="url" placeholder="Enter url here" pattern="https://.*" requierd>
+		<input type="submit">
+		</form>
+		<iframe src="https://example.com" id="ifr" width="100%" height="500"></iframe>
+	<script>
+		function makeiframe() {
+			var iframeurl = document.getElementById("url").value;
+			var iframei = document.getElementById("ifr")
+			iframei.src = iframeurl
+}
+	</script>
+</html>
