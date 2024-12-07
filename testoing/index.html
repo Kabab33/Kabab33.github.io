@@ -1,0 +1,31 @@
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kabab's site</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+            rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/Data/Img/favicon.png" />
+    <script src="/Data/js/sudoku.js"></script>
+    <script>
+    function makesudoku(difficulty) {
+        var stringsudoku;
+        stringsudoku = sudoku.generate(difficulty);
+        document.getElementById("out").innerHTML = stringsudoku;
+    }
+</script>
+</head>
+
+<body class="ksoftgradient">
+<button onclick="makesudoku(33)">Generate 4x4 sudoku puzzle with easy difficulty</button>
+<p id="out">replase with sudoku</p>
+<div style="ba">
+
+</div>
+</body>
