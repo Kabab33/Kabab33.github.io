@@ -21,6 +21,15 @@ body {
 	transform: translate(-50%, -50%);
 }
 
+.centersudoku {
+    margin: 0;
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .ksoftgradient {
 	background: linear-gradient(30deg, #F05146, #C140BF);
 	margin: 0;
