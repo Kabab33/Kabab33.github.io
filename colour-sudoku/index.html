@@ -87,7 +87,6 @@
 <h1 style="text-align: center">Color sudoku generator</h1>
 <div style="text-align: center;">
     <form onsubmit="makesudokuform('out', 'diff');return false">
-        <label for="diff">Select a difficulty<br></label>
         <select id="diff" required>
             <option value="easy">easy</option>
             <option value="mediun">Medium</option>
@@ -99,7 +98,8 @@
         <br>
         <button id="gen" type="submit">Generate Sudoku</button>
     </form>
-    <button onclick="solvestringsudoku()">Solve Sudoku</button>
+    <br>
+    <button onclick="solvestringsudoku()" >Solve Sudoku</button>
     <p id="out">replacse with sudoku</p>
 </div>
 <div class="centersudoku">
