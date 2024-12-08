@@ -2,10 +2,7 @@
 <head xmlns="http://www.w3.org/1999/html">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kabab's site</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
+    <title>Kabab's testing page</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,87 +10,8 @@
             href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
             rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="/Data/Img/favicon.png" />
-    <style>
-        table { border-collapse: collapse; font-family: Calibri, sans-serif; }
-        colgroup, tbody { border: solid medium; }
-        td { border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0; }
-    </style>
-
-    <style>
-        .footer {
-            text-align: center;
-            padding: 3px;
-            background-color: #f1f1f1;
-            border-top: 1px solid #d3d3d3;
-            color: black;
-        }
-        .dot {
-            height: 40px;
-            width: 40px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-        }
-    </style>
-    <script src="/Data/js/sudoku.js"></script>
-    <script>
-    function makesudokuform(outputid, difficultyid) {
-        //difficulty variable set to the name of the select element
-        let difficulty = document.getElementById(difficultyid).value;
-        let stringsudoku = sudoku.generate(difficulty);
-        sudoku.print_board(stringsudoku);
-        document.getElementById(outputid).innerHTML = document.getElementById(difficultyid).value + "<br>" + stringsudoku;
-
-        for (let i = 0; i < stringsudoku.length; i++) {
-            if (stringsudoku[i] === ".") {
-                stringsudoku = stringsudoku.replace(".", "<input type='number' min='1' max='9' required>");
-            }
-        }
-    }
-</script>
 </head>
 
-<body class="ksoftgradient">
-<h1 style="text-align: center">Color sudoku generator</h1>
-<div style="text-align: center;">
-<form onsubmit="makesudokuform('out', 'diff');return false">
-    <label for="diff">Select a difficulty<br></label>
-    <select id="diff" required>
-        <option value="easy">easy</option>
-        <option value="mediun">Medium</option>
-        <option value="hard">Hard</option>
-        <option value="very-hard">Very-hard</option>
-        <option value="insane">Insane</option>
-        <option value="inhuman">Inhuman</option>
-    </select>
-    <br>
-    <button id="gen" type="submit">Generate Sudoku</button>
-</form>
-<p id="out">replacse with sudoku</p>
-</div>
-<div class="centersudoku">
-<table style="text-align: center">
-    <caption>Output</caption>
-    <colgroup><col><col><col>
-    <colgroup><col><col><col>
-    <colgroup><col><col><col>
-    <tbody>
-    <tr> <td><span class="dot" id="1"></span> <td><span class="dot" id="2"></span>  <td><span class="dot" id="3"></span> <td><span class="dot" id="4"></span> <td><span class="dot" id="5"></span>  <td><span class="dot"></span> <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>
-    <tr> <td><span class="dot" id="7"></span> <td><span class="dot" id="8"></span>  <td><span class="dot"id="9"></span>  <td><span class="dot"id="10"></span>  <td><span class="dot"id="11"></span> <td><span class="dot"id="12"></span>  <td><span class="dot"id="13"></span>  <td><span class="dot"id="14"></span> <td><span class="dot"id="15"></span>
-    <tr> <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>
-    <tbody>
-    <tr> <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>
-    <tr> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>
-    <tr> <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>
-    <tbody>
-    <tr> <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>
-    <tr> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>
-    <tr> <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span> <td><span class="dot"></span>  <td><span class="dot"></span>  <td><span class="dot"></span>
-</table><br>
-</div>
+<body>
 
-<footer class="footer">
-        <p>sudoku generator made by <a href="https://github.com/robatron/">robatron</a><br><a href="https://github.com/robatron/sudoku.js/tree/master">>see on github<</a>      <a href="https://github.com/robatron/sudoku.js/tree/master#MIT-1-ov-file" >>project licence<</a></p>
-</footer>
-</divs>
 </body>
