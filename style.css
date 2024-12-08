@@ -48,6 +48,10 @@ body {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
+.discordblack {
+    background-color: #36393f;
+    color: #dbdedc;
+}
 .button {
   padding: 15px 25px;
   font-size: 24px;
