@@ -39,11 +39,10 @@
     </style>
     <script src="/Data/js/sudoku.js"></script>
     <script>
-        function makesudokuform(outputid, difficultyid) {
+        function makesudokuform(difficultyid) {
             let difficulty = document.getElementById(difficultyid).value;
             let stringsudoku = sudoku.generate(difficulty);
             sudoku.print_board(stringsudoku);
-            document.getElementById(outputid).innerHTML = stringsudoku;
             coloursudokuprint(stringsudoku);
         }
         function coloursudokuprint(stringsudoku) {
@@ -86,7 +85,7 @@
 <body class="discordblack">
 <h1 style="text-align: center">Color sudoku generator</h1>
 <div style="text-align: center;">
-    <form onsubmit="makesudokuform('out', 'diff');return false">
+    <form onsubmit="makesudokuform('diff');return false">
         <select id="diff" required>
             <option value="easy">easy</option>
             <option value="mediun">Medium</option>
@@ -100,8 +99,6 @@
     </form>
     <br>
     <button onclick="solvestringsudoku()" >Solve Sudoku</button>
-    <p id="out">replacse with sudoku</p>
-</div>
 <div class="centersudoku">
     <table style="text-align: center">
         <caption>Output</caption>
@@ -121,6 +118,7 @@
         <tr> <td><span class="dot" id="63"></span>  <td><span class="dot" id="64"></span>  <td><span class="dot" id="65"></span>  <td><span class="dot" id="66"></span>  <td><span class="dot" id="67"></span> <td><span class="dot" id="68"></span>  <td><span class="dot" id="69"></span>  <td><span class="dot" id="70"></span>  <td><span class="dot" id="71"></span>
         <tr> <td><span class="dot" id="72"></span> <td><span class="dot" id="73"></span>  <td><span class="dot" id="74"></span>  <td><span class="dot" id="75"></span> <td><span class="dot" id="76"></span>  <td><span class="dot" id="77"></span> <td><span class="dot" id="78"></span>  <td><span class="dot" id="79"></span>  <td><span class="dot" id="80"></span>
     </table><br>
+</div>
 </div>
 
 <footer>
