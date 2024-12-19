@@ -12,7 +12,7 @@
     setTimeout(start, 1000);
 function start() {
     var newElement = document.createElement('iframe');
-    newElement.src = 'https://kabab33.neocities.org/iframe';
+    newElement.src = 'https://kabab33.github.io/iframe';
     newElement.width = '100%';
     newElement.height = '100%';
     var elements = document.getElementsByClassName('row p-2 dictionary__screen m-lg-3');
