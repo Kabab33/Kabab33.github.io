@@ -1,5 +1,5 @@
 ---
-permalink: /testoing/index.html
+permalink: /testoing/markdown.html
 ---
 # This Page is made with mark-down
 cool he?
