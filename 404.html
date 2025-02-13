@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kabab's testing page</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+            rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/Data/Img/favicon.png" /> 
+    <script src="/Data/js/utils.js"></script>  
+    <script>
+    function shrok() {    
+        var img = document.getElementById("img");
+        var text = document.getElementById("text");
+        if (chance(114874044)) {
+            img.src = "/Data/Img/Gerard-Joling.png";
+            text.innerHTML = "Gefeliciteerd! Je hebt de geheime 404 Gerard Joling gevonden!";
+        }
+    };
+    </script>
+</head>
+
+<body class="discordblack" onload="shrok()">
+    <div style="text-align: center;">
+        <h1>404</h1>
+    <div class="center">
+        <img src="https://cataas.com/cat" height="500" id="img" />
+        <p id="text">Je was op zoek naar een pagina. Maar je vond deze kat.</p>
+        <button onclick="redirect('/')" type="button" style="border-radius: 8px; background-color: lightseagreen;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">Ga Naar Home</button>
+    </div>
+    </div>
+</body>
