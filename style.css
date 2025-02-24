@@ -48,6 +48,14 @@ body {
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
+.input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
 .discordblack {
     background-color: #36393f;
     color: #dbdedc;
