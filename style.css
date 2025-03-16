@@ -6,7 +6,7 @@ body {
 }
 
 .chipback {
-	background-image: url("/Data/Chip/furretbg.jpg");
+	background-image: url("/data/chip/furretbg.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100%;

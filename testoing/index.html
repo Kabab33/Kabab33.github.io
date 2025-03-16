@@ -11,10 +11,21 @@
             rel="stylesheet" />
     <link rel="shortcut icon" type="image/png" href="/data/img/favicon.png" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://unpkg.com/js-cookie"></script>
+    <script src="https://unpkg.com/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="/data/js/utils.js"></script>
 </head>
 
 <body>
-
+    <input type="text" id="name" placeholder="Name" />
+    <button onclick="
+    let name = document.getElementById('name').value;
+    Cookies.set('namee', name);
+">Make!</button>
+    <button onclick="
+    let name = Cookies.get('namee');
+    alert(name);
+">Show!</button>
+    <button onclick="
+    Cookies.remove('namee');
+">Remove!</button>
 </body>
