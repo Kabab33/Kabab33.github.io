@@ -1,9 +1,0 @@
-# _config.yml
-title: [Testing]
-description: [here i test github pages markdown]
-github:
-  is_project_page: false
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-  - jekyll-remote-theme
-show_downloads: [false]
