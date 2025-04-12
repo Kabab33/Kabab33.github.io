@@ -2,7 +2,7 @@
 <head xmlns="http://www.w3.org/1999/html">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kabab's testing page</title>
+    <title>Les over in countdown</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,6 +57,10 @@
             if (parseInt(urlParams.get("uur")) <= 1) {
                 backElement.setAttribute("style", "display: none;");
             }
+            else if (parseInt(urlParams.get("uur")) >= 8) {
+                nextElement.setAttribute("style", "display: none;");
+            }
+            
             backElement.setAttribute("href", window.location.pathname + "?uur=" + (parseInt(urlParams.get("uur")) - 1));
         }
 
