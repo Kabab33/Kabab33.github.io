@@ -46,7 +46,7 @@
     if (urlParams.has("uur")) {
         var tijd = times.get(parseInt(urlParams.get("uur")));
         if (tijd == undefined) {
-            countdown.outerHTML = "<h1 class='center'>Error: Dat uur is invalid jij groote dumbo</h1>";
+            countdown.outerHTML = "<h1 class='center'>Error: Dat uur is invalid voeg ?uur=1 toe aan de url</h1>";
             nextElement.setAttribute("href", "#");
             backElement.setAttribute("href", "#");
         }
