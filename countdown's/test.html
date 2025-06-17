@@ -1,37 +1,82 @@
-<head>
-<!-- Primary Meta Tags -->
-<title>poes andrei.png</title>
-<meta name="title" content="poesAndrei.png" />
-<meta name="description" content="" />
-
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://img.kabab33.nl/poesAndrei" />
-<meta property="og:title" content="poes andrei.png" />
-<meta property="og:image" content="https://img.kabab33.nl/poes andrei.png" />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://img.kabab33.nl/poesAndrei" />
-<meta property="twitter:title" content="poes andrei.png" />
-<meta property="twitter:description" content="" />
-<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
-
+<!DOCTYPE html>
+<head xmlns="http://www.w3.org/1999/html">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les over in countdown</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+            rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="/data/img/favicon.png" />
 </head>
-   <body>
-      <script>
-    const queryString = window.location.search
+<body>
+<a href="/countdown's/index.html", id="back"><img src="/data/img/buttons/navigation/back.gif" alt="back"></a>
+<a href="/"><img src="/data/img/home.png" alt="home"></a>
+<a href="/koeniskaal/index.html", id="next"><img src="/data/img/buttons/navigation/redNext.gif"></a>
+<a href="https://logwork.com/countdown" class="countdown-timer" data-timezone="Europe/Amsterdam" data-language="nl" data-date="2025-4-18 12:30" id="countdown">Deze les is over in:</a>
+<script>
+        const queryString = window.location.search;
+        var date = new Date();
+
+    // Guys is my code sightreadable enough?
     const urlParams = new URLSearchParams(queryString);
-    if (urlParams.has("shareid")){
-        var shareid = urlParams.get("shareid");
+            const               times = new Map();
+            times               .set(1, "9:15");
+                                times.set(2, 
+                                "10:00");
+                                times.set(3,
+                            "10:45"); times
+                            .set(4, "11:45");
+                            times.set(5, 
+                            "12:30");
+                                times.set(6,
+                                "13:45");
+                                times.set(7,
+                                "14:30");
+                                times.set(8,
+                                "15:15");
+                                times.set(9,
+                                "16:00");
+    var countdown = document.getElementById("countdown");
+    const nextElement = document.getElementById("next");
+    const backElement = document.getElementById("back");
+    if (urlParams.has("title")) {
+        countdown.innerHTML = urlParams.get("title");
     }
-    else shareid = 5000;
-    setTimeout(function(){
-            window.location.href = 'https://polarlearn.tech';
-         }, shareid);
-      </script>
-      <center>
-      <h1>Kat!!!!!</h1>
-      <img src="https://img.kabab33.nl/poesAndrei.png">
-      </center>
-   </body>
+    if (urlParams.has("uur")) {
+        var tijd = times.get(parseInt(urlParams.get("uur")));
+        if (tijd == undefined) {
+            countdown.outerHTML = "<h1 class='center'>Error: Dat uur is invalid voeg ?uur=1 toe aan de url</h1>";
+            nextElement.setAttribute("href", "#");
+            backElement.setAttribute("href", "#");
+        }
+        else {
+            var countdowndate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + tijd;
+            countdown.setAttribute("data-date", countdowndate);
+            nextElement.setAttribute("href", window.location.pathname + "?uur=" + (parseInt(urlParams.get("uur")) + 1));
+            if (parseInt(urlParams.get("uur")) <= 1) {
+                backElement.setAttribute("style", "display: none;");
+            }
+            else if (parseInt(urlParams.get("uur")) >= times.size) {
+                nextElement.setAttribute("style", "display: none;");
+            }
+            
+            backElement.setAttribute("href", window.location.pathname + "?uur=" + (parseInt(urlParams.get("uur")) - 1));
+        }
+
+    }
+    else if (urlParams.has("date")) {
+        var countdowndate = urlParams.get("date");
+        nextElement.setAttribute("style", "display: none;");
+        backElement.setAttribute("style", "display: none;");
+        countdown.setAttribute("data-date", countdowndate);
+    }
+    else {
+        countdown.outerHTML = "<h1 class='center'>Error: Geen Uur Gezet</h1>";
+    }
+</script>
+<script src="https://cdn.logwork.com/widget/countdown.js"></script>
+
+</body>
