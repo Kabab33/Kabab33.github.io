@@ -30,13 +30,15 @@
                             "10:45"); times
                             .set(4, "11:45");
                             times.set(5, 
-                                "12:30");
+                            "12:30");
                                 times.set(6,
                                 "13:45");
                                 times.set(7,
                                 "14:30");
                                 times.set(8,
                                 "15:15");
+                                times.set(9,
+                                "16:00");
     var countdown = document.getElementById("countdown");
     const nextElement = document.getElementById("next");
     const backElement = document.getElementById("back");
@@ -57,7 +59,7 @@
             if (parseInt(urlParams.get("uur")) <= 1) {
                 backElement.setAttribute("style", "display: none;");
             }
-            else if (parseInt(urlParams.get("uur")) >= 8) {
+            else if (parseInt(urlParams.get("uur")) >= times.size) {
                 nextElement.setAttribute("style", "display: none;");
             }
             
@@ -72,9 +74,7 @@
         countdown.setAttribute("data-date", countdowndate);
     }
     else {
-        countdown.outerHTML = "<h1 class='center'>Error: Geen Uur Gezet ja dunce</h1>";
-        nextElement.setAttribute("href", "#");
-        backElement.setAttribute("href", "#");
+        countdown.outerHTML = "<h1 class='center'>Error: Geen Uur Gezet</h1>";
     }
 </script>
 <script src="https://cdn.logwork.com/widget/countdown.js"></script>
