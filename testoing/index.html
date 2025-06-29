@@ -1,31 +1,12 @@
 <!DOCTYPE html>
-<head xmlns="http://www.w3.org/1999/html">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kabab's testing page</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-            rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="/data/img/favicon.png" />
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://unpkg.com/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <script src="/data/js/utils.js"></script>
-</head>
-
 <body>
-    <input type="text" id="name" placeholder="Name" />
-    <button onclick="
-    let name = document.getElementById('name').value;
-    Cookies.set('namee', name);
-">Make!</button>
-    <button onclick="
-    let name = Cookies.get('namee');
-    alert(name);
-">Show!</button>
-    <button onclick="
-    Cookies.remove('namee');
-">Remove!</button>
+<i data-lucide="volume-2" class="my-class"></i>
+<i data-lucide="x"></i>
+<i data-lucide="menu"></i>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
+
 </body>
