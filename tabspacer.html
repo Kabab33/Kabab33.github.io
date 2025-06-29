@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="pagetitle">--------Tab Spacer--------</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="shortcut icon" type="image/png" id="faviconelement" href="https://img.kabab33.nl/letterlijkNiks500x500.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body class="discordblack" onload="onloadfunction();">
+    <div class="container">
+        <h1 class="text-center">Tab Spacer</h1>
+        <p class="text-center">Handig als je als mij bent en te veel tabs open hebt</p>
+    </div>
+<script>
+    formwhenchanged = function() {
+        var formpage = document.getElementById("formpage");
+        var pagetitle = document.getElementById("pagetitle");
+        var switchcheck = document.getElementById("switchCheck");
+        var faviconselector = document.getElementById("faviconselector");
+        var formpagevalue;
+        if (formpage.value === "") {
+            formpagevalue = "--------Tab Spacer--------";
+        } else {
+            formpagevalue = formpage.value;
+        }
+        pagetitle.innerHTML = formpagevalue
+        var radios = faviconselector.querySelectorAll('input[type="radio"]');
+        radios.forEach(function(radio) {
+            radio.disabled = !switchcheck.checked;
+        });
+        if (switchcheck.checked) {
+            faviconselector.style.display = "block";
+
+        } else {
+            faviconselector.style.display = "none";
+            radios.forEach(function(radio) {
+                radio.checked = false;
+            });
+            var link = document.getElementById('faviconelement');
+            link.href = "https://img.kabab33.nl/letterlijkNiks500x500.png"; // Remove favicon
+
+        }
+    };
+    updatefavicon = function() {
+        var radios = document.querySelectorAll('#faviconselector input[type="radio"]');
+        var selectedFavicon = null;
+        var link = document.getElementById('faviconelement');
+        radios.forEach(function(radio) {
+            if (radio.checked) {
+                if (radio.id === "custom") {
+                    var customUrl = document.getElementById("basic-url").value;
+                    if (customUrl) {
+                        selectedFavicon = customUrl;
+                    }
+                } else {
+                    selectedFavicon = radio.nextElementSibling.querySelector('img').src; }
+            }
+        });
+        if (selectedFavicon) {
+            link.href = selectedFavicon;
+        }
+    };
+    onloadfunction = function() {
+        var radios = document.querySelectorAll('#faviconselector input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    updatefavicon();
+                });
+            });
+        formwhenchanged()
+    }
+</script>
+<main>
+    <noscript>Deze form doet niks omdat javascript uit staat of je brouwser support het niet</noscript>
+    <form style="padding-top: 50px; padding-left: 30px; padding-right: 60%;" onchange="formwhenchanged();" onsubmit="formwhenchanged(); return false;">
+        <div class="mb-3">
+            <label for="formpage" class="form-label col-form-label-lg">Title</label>
+            <input type="text" class="form-control form-control-lg" id="formpage" placeholder="--------Tab Spacer--------">
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheck">
+            <label class="form-check-label" for="switchCheck">Custom Icoon</label>
+        </div>
+
+        <div id="faviconselector" style="display: none; padding-top: 20px;">
+        <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" disabled>
+        <label class="btn" for="option5"><img src="/data/img/favicon.png" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off" disabled>
+        <label class="btn" for="option6"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LXVwLWljb24gbHVjaWRlLWFycm93LXVwIj48cGF0aCBkPSJtNSAxMiA3LTcgNyA3Ii8+PHBhdGggZD0iTTEyIDE5VjUiLz48L3N2Zz4=" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option7" autocomplete="off" disabled>
+        <label class="btn" for="option7"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWRvd24taWNvbiBsdWNpZGUtYXJyb3ctZG93biI+PHBhdGggZD0iTTEyIDV2MTQiLz48cGF0aCBkPSJtMTkgMTItNyA3LTctNyIvPjwvc3ZnPg==" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option8" autocomplete="off" disabled>
+        <label class="btn" for="option8"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWJpZy1kb3duLWljb24gbHVjaWRlLWFycm93LWJpZy1kb3duIj48cGF0aCBkPSJNMTUgNnY2aDRsLTcgNy03LTdoNFY2aDZ6Ii8+PC9zdmc+" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option9" autocomplete="off" disabled>
+        <label class="btn" for="option9"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWJpZy11cC1pY29uIGx1Y2lkZS1hcnJvdy1iaWctdXAiPjxwYXRoIGQ9Ik05IDE4di02SDVsNy03IDcgN2gtNHY2SDl6Ii8+PC9zdmc+" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option10" autocomplete="off" disabled>
+        <label class="btn" for="option10"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNlYXJjaC1pY29uIGx1Y2lkZS1zZWFyY2giPjxwYXRoIGQ9Im0yMSAyMS00LjM0LTQuMzQiLz48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI4Ii8+PC9zdmc+" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option11" autocomplete="off" disabled>
+        <label class="btn" for="option11"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWRvd25sb2FkLWljb24gbHVjaWRlLWRvd25sb2FkIj48cGF0aCBkPSJNMTIgMTVWMyIvPjxwYXRoIGQ9Ik0yMSAxNXY0YTIgMiAwIDAgMS0yIDJINWEyIDIgMCAwIDEtMi0ydi00Ii8+PHBhdGggZD0ibTcgMTAgNSA1IDUtNSIvPjwvc3ZnPg==" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option12" autocomplete="off" disabled>
+        <label class="btn" for="option12"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJvb2stdGV4dC1pY29uIGx1Y2lkZS1ib29rLXRleHQiPjxwYXRoIGQ9Ik00IDE5LjV2LTE1QTIuNSAyLjUgMCAwIDEgNi41IDJIMTlhMSAxIDAgMCAxIDEgMXYxOGExIDEgMCAwIDEtMSAxSDYuNWExIDEgMCAwIDEgMC01SDIwIi8+PHBhdGggZD0iTTggMTFoOCIvPjxwYXRoIGQ9Ik04IDdoNiIvPjwvc3ZnPg==" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option4" autocomplete="off" disabled>
+        <label class="btn" for="option4"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNob3BwaW5nLWJhc2tldC1pY29uIGx1Y2lkZS1zaG9wcGluZy1iYXNrZXQiPjxwYXRoIGQ9Im0xNSAxMS0xIDkiLz48cGF0aCBkPSJtMTkgMTEtNC03Ii8+PHBhdGggZD0iTTIgMTFoMjAiLz48cGF0aCBkPSJtMy41IDExIDEuNiA3LjRhMiAyIDAgMCAwIDIgMS42aDkuOGEyIDIgMCAwIDAgMi0xLjZsMS43LTcuNCIvPjxwYXRoIGQ9Ik00LjUgMTUuNWgxNSIvPjxwYXRoIGQ9Im01IDExIDQtNyIvPjxwYXRoIGQ9Im05IDExIDEgOSIvPjwvc3ZnPg==" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option3" autocomplete="off" disabled>
+        <label class="btn" for="option3"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNsb3VkLWljb24gbHVjaWRlLWNsb3VkIj48cGF0aCBkPSJNMTcuNSAxOUg5YTcgNyAwIDEgMSA2LjcxLTloMS43OWE0LjUgNC41IDAgMSAxIDAgOVoiLz48L3N2Zz4=" width="70"></label>
+
+        <input type="radio" class="btn-check" name="options-base" id="option2" autocomplete="off" disabled>
+        <label class="btn" for="option2"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJlYW4tb2ZmLWljb24gbHVjaWRlLWJlYW4tb2ZmIj48cGF0aCBkPSJNOSA5Yy0uNjQuNjQtMS41MjEuOTU0LTIuNDAyIDEuMTY1QTYgNiAwIDAgMCA4IDIyYTEzLjk2IDEzLjk2IDAgMCAwIDkuOS00LjEiLz48cGF0aCBkPSJNMTAuNzUgNS4wOTNBNiA2IDAgMCAxIDIyIDhjMCAyLjQxMS0uNjEgNC42OC0xLjY4MyA2LjY2Ii8+PHBhdGggZD0iTTUuMzQxIDEwLjYyYTQgNCAwIDAgMCA2LjQ4NyAxLjIwOE0xMC42MiA1LjM0MWE0LjAxNSA0LjAxNSAwIDAgMSAyLjAzOSAyLjA0Ii8+PGxpbmUgeDE9IjIiIHgyPSIyMiIgeTE9IjIiIHkyPSIyMiIvPjwvc3ZnPg==" width="70"></label>
+
+
+        <input type="radio" class="btn-check" name="options-base" id="custom" autocomplete="off" disabled>
+        <label class="btn" for="custom">Aangepast</label>
+
+
+
+
+            <div class="mb-3">
+                <label for="basic-url" class="form-label">Custom icon url</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                </div>
+                <div class="form-text" id="basic-addon4" style="color: #f1f1f1">Om dit te gebruiken moet je Aangepast hierboven hebben geselecteerd</div>
+            </div>
+
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <footer>
+        <p class="fw-lighter"><a class="text-reset" href="tabspacercredits.html">Credits</a></p>
+    </footer>
+</main>
+</body>
+</html>
