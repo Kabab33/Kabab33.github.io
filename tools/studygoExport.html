@@ -73,6 +73,11 @@
             background-color: #24a15b;
             color: #fff;
         }
+        button:disabled{
+            background-color: #283722;
+            color: #fff;
+            cursor: not-allowed;
+        }
         .inputd {
             font-size: 14px;
             line-height: 20px;
@@ -169,7 +174,6 @@
         let input = document.getElementById(id).value;
         progresstohide.style.display = "none";
         document.getElementById("exportbuttonnm").disabled = true;
-        document.getElementById("exportbuttonnm").style.backgroundColor = "#283722";
         pb.style.width = "15%";
         pb.innerHTML = "Lijst Laden";
         pb.classList.remove("bg-success");
@@ -183,6 +187,7 @@
                     background: "linear-gradient(to right, #c33645, #ff4548)",
                 }
             }).showToast();
+            document.getElementById("exportbuttonnm").disabled = false;
             return;
         }
         let inputs = input.split("/");
@@ -194,7 +199,7 @@
                 position: "center",
                 backgroundColor: "#ff0000",
             }).showToast();
-            alert("Voer een geldige Study Go lijst URL in.");
+            document.getElementById("exportbuttonnm").disabled = false;
             return;
         }
         input = inputs[inputs.length - 1];
@@ -225,6 +230,7 @@
                 }
             }).showToast();
             progresstohide.style.display = "none";
+            document.getElementById("exportbuttonnm").disabled = false;
             return;
         }
         // Oké dus wat je misschien opmerkt, is dat de structuur van de json dit is:
@@ -272,7 +278,6 @@
         console.log(outputText);
         output.innerHTML = outputText;
         document.getElementById("exportbuttonnm").disabled = false;
-        document.getElementById("exportbuttonnm").style = "";
         Toastify({
             text: "Lijst succesvol geëxporteerd!",
             duration: 3000,
