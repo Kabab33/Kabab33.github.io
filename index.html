@@ -1,31 +1,264 @@
 <!DOCTYPE html>
-<!--suppress ALL -->
-<html lang=nl>
+<head xmlns="http://www.w3.org/1999/html" lang="nl">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site op het internet</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/data/img/favicon.png"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Comfortaa', cursive;
+            background-image: url("https://img.kabab33.nl/funkybg/stars3.gif");
+        }
 
-<head>
-    <meta name="google-site-verification" content="eEaqxyfcwxDKM1HWESn-ZZAkyFuUiSPykLIQj69qRAc" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kabab's site</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-        rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="/data/img/favicon.png" />
+        .maindiv {
+            padding: 20px;
+            background-color: rgba(46, 52, 64, 0.81);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #e5e9f0;
+            border-radius: 10px;
+            width: 46%;
+            min-width: 600px;
+            margin: auto;
+        }
+        h1 {
+            color: #4a90e2;
+        }
+
+        p {
+            font-size: 100%;
+            line-height: 1.5;
+        }
+        main {
+            flex: 1;
+        }
+        .breadcrumb-bg {
+            background: rgba(46, 52, 64, 0.81);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .divborder {
+            border: 1px solid #e5e9f0;
+            border-radius: 10px;
+            color: #e5e9f0;
+            text-align: center;
+            min-width: 600px;
+            width: 46%;
+            margin: auto;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer {
+            height: 8px;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </head>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<body>
+<nav aria-label="breadcrumb" class="breadcrumb-bg my-3 ms-3" style="max-width: 90px;">
+    <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item active text-white" aria-current="page">Home</li>
+    </ol>
+</nav>
 
-<body class="ksoftgradient">
-	<div class="center" style="text-align: center;">
-		<H1>Welkom op mijn site!</H1>
-        <figure class="zoom">
-		<a href="/countdown's/"><img src="data/img/homepage/its-the-final-countdown-dudududuuuuuuu-dudududuuuduuuuuuuuu.png" with="100" height="100"></a>
-        <figcaption>Countdouwn's</figcaption>
-        </figure>
-    <figure class="zoom">
-		<a href="/downloads/index.html"><img src="data/img/homepage/Download.png" with="100" height="100"></a>
-    <figcaption>Downloads</figcaption>
-    </figure>
+<main>
+    <h1 style="text-align: center; padding: 20px;">Welkom tot Kabab's Site!</h1>
+    <div class="maindiv">
+        <p>hooi.</p>
+        <img src="https://img.kabab33.nl/avatar.png" width="200" height="200"><br>
+        <a href="mailto:contact@kabab33.nl">Contact Me</a>
     </div>
+    <br>
+    <div class="divborder">
+        <p style="text-align: left"><img src="https://img.kabab33.nl/windowsXPIcons/Microsoft Windows Network.webp" width="5%">Profiles</p>
+        <div class="container text-center">
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                <div class="col">
+                    <div class="p-3">
+                        <a href="https://github.com/Kabab33" class="text-reset">
+                            <figure><img src="https://img.kabab33.nl/github-mark-white.svg" width="100%" height="73px">
+                                <figcaption class="text-decoration-underline">Github</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <a href="https://steamcommunity.com/id/Kabab33/" class="text-reset">
+                            <figure><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Steam</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="divborder">
+        <p style="text-align: left"><img src="https://img.kabab33.nl/windowsXPIcons/Content%20Advisor.webp" width="5%">Bookmarks</p>
+
+        <div class="container text-center">
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                <div class="col">
+                    <div class="p-3" data-toggle="tooltip" title="Een goede video downloader naar mp4/mp3">
+                        <a href="https://cobalt.tools" class="text-reset">
+                            <figure><img src="https://cobalt.tools/favicon.png" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Cobalt<br></figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3" data-toggle="tooltip" title="In de officele staat YouTube uit maar in deze instance is het aan">
+                        <a href="https://cobalt.meowing.de/" class="text-reset">
+                            <figure><img src="https://cobalt.meowing.de/favicon.png" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Cobalt Comunity</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3" data-toggle="tooltip" title="Dit heeft wat handige tools voor devs, als je on-device wilt zou ik devtoys aanraden" style="background-color: rgba(255,255,255,0.34); border-radius: 10px;">
+                        <a href="https://it-tools.tech/" class="text-reset">
+                            <figure><img src="https://it-tools.tech/favicon-32x32.png" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">IT Tools</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3" data-toggle="tooltip" title="Laat je makkelijk en veilig bestanden versturen zonder dat je een account nodig hebt met een 30 gig liemiet! Gehost in Duitsland dus ook nog snel">
+                        <a href="https://send.datenpost.app/" class="text-reset">
+                            <figure><img src="https://send.datenpost.app/favicon-32x32.93522728.png" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Send (datenpost)</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3" data-toggle="tooltip" title="Heeft heel wat handige tools te maken met pdfs">
+                        <a href="https://stirlingpdf.io" class="text-reset">
+                            <figure><img src="https://stirlingpdf.io/favicon-32x32.png" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Stirling PDF</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3" data-toggle="tooltip" title="Een alternatief tot send maar dan best anders, je hebt hier zogenaamd een 'bin' waarin je bestanden kan uploaden net als een map. Er word een willekeurige bin gemaakt maar je kan gewoon enige naam aan het einde van de url doen om er een met die naam te maken. En het enige storage limiet is hoeveel ruimte te server over heeft">
+                        <a href="https://filebin.net/" class="text-reset">
+                            <figure><img src="https://filebin.net/static/img/favicon.png" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Filebin</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                <div class="p-3" data-toggle="tooltip" title="Goede url shortener">
+                    <a href="https://is.gd/" class="text-reset">
+                        <figure><img src="https://is.gd/isgd_favicon.ico" width="70px" height="73px">
+                            <figcaption class="text-decoration-underline">is.gd</figcaption>
+                        </figure>
+                    </a>
+                </div>
+                </div>
+            </div>
+            <p style="text-align: right"><a href="https://cryptpad.fr/form/#/2/form/view/7ZpimMznT1tDHJ3eUU7fmkiw1CjXFvIqCuz5SWW4UoQ/"><img src="https://img.kabab33.nl/windowsXPIcons/Add.webp" width="5%">Submit</a></p>
+        </div>
+    </div>
+    <br>
+    <div class="divborder">
+        <p style="text-align: left"><img src="https://img.kabab33.nl/windowsXPIcons/My%20Tools.webp" width="5%">Tools</p>
+        <div class="container text-center">
+            <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+                <div class="col">
+                    <div class="p-3">
+                        <a href="/tools/studygoExport.html" class="text-reset">
+                            <figure><img src="https://img.kabab33.nl/stg-export.png" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Studygo export</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <a href="/tabspacer.html" class="text-reset">
+                            <figure><img src="https://img.kabab33.nl/windowsXPIcons/Application%20Window.webp" width="70px" height="73px">
+                                <figcaption class="text-decoration-underline">Tab Spacer<br></figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="divborder">
+        <p style="text-align: left"><img src="https://img.kabab33.nl/windowsXPIcons/Folder Opened.webp" width="5%">Countdowns</p>
+        <div class="container text-center">
+            <h1>Er Zijn nu geen countdowns</h1>
+            <br>
+        </div>
+    </div>
+</main>
+<br>
+<div class="divborder">
+    <p style="text-align: left"><img src="https://img.kabab33.nl/windowsXPIcons/Internet%20Information%20Services%206.webp" width="5%">Downloads</p>
+    <div class="container text-center">
+        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+            <div class="col">
+                <div class="p-3">
+                    <a href="/downloads/get/scripts/Studytools/Studytools-dvd.user.js" class="text-reset">
+                        <figure class="zoom"><img src="/data/img/DLPG/Studytools-dvd.png" width="100px" height="100px">
+                            <figcaption class="text-decoration-underline">Study tools dvd screensaver hotwire</figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3">
+                    <a href="/downloads/get/scratch/Floppa%20clicker%20.5%20.sb3" class="text-reset">
+                        <figure class="zoom"><img src="/data/img/DLPG/Floppa%20Clicker%20.5%20.png" width="100px" height="100px">
+                            <figcaption class="text-decoration-underline">Floppa Clicker .5<br></figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container" style="color: white;">
+        <div class="row">
+            <div class="col-md-6">
+                <p>Gelicenseerd onder gnu-gpl.</p>
+            </div>
+            <div class="col-md-6" style="text-align: right;">
+                <a href="/credits/index.html">Credits</a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>

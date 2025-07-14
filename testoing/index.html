@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<head xmlns="http://www.w3.org/1999/html">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kabab's testing page</title>
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-            href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
-            rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="/data/img/favicon.png" />
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://unpkg.com/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <script src="/data/js/utils.js"></script>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
-    <input type="text" id="name" placeholder="Name" />
-    <button onclick="
-    let name = document.getElementById('name').value;
-    Cookies.set('namee', name);
-">Make!</button>
-    <button onclick="
-    let name = Cookies.get('namee');
-    alert(name);
-">Show!</button>
-    <button onclick="
-    Cookies.remove('namee');
-">Remove!</button>
+<p id="p">Hier komt text</p>
+<button onclick="getText()">zet naar p</button>
+<form>
+    <label for="input">Text: </label><input type="text" id="input" placeholder="Type hier iets">
+    <button type="button" onclick="setText()">Zet text</button>
+</form>
+<script>
+    function setText() {
+        const input = document.getElementById("input").value;
+        window.localStorage.setItem("text", input);
+    }
+    function  getText() {
+        var text = window.localStorage.getItem("text");
+        if (text) {
+            document.getElementById("p").innerText = text;
+        } else {
+            document.getElementById("p").innerText = "Geen text gevonden";
+        }
+    }
+</script>
+
 </body>
+</html>

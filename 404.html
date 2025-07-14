@@ -12,24 +12,24 @@
     <link rel="shortcut icon" type="image/png" href="/data/img/favicon.png" />
     <script src="/data/js/utils.js"></script>
     <script>
-    function shrok() {    
-        var img = document.getElementById("img");
-        var text = document.getElementById("text");
-        if (chance(114874044)) {
-            img.src = "/Data/Img/Gerard-Joling.png";
-            text.innerHTML = "Gefeliciteerd! Je hebt de geheime 404 Gerard Joling gevonden!";
-        }
-    };
+        window.onload = function () {
+            var img = document.getElementById("img");
+            var text = document.getElementById("text");
+            if (chance(114874044)) {
+                img.src = "/Data/Img/Gerard-Joling.png";
+                text.innerHTML = "Gefeliciteerd! Je hebt de geheime 404 Gerard Joling gevonden!";
+            }
+        };
     </script>
 </head>
 
-<body class="discordblack" onload="shrok()">
+<body class="discordblack">
     <div style="text-align: center;">
         <h1>404</h1>
     <div class="center">
         <img src="https://cataas.com/cat" height="500" id="img" />
         <p id="text">Je was op zoek naar een pagina. Maar je vond deze kat.</p>
-        <button onclick="redirect('/')" type="button" style="border-radius: 8px; background-color: lightseagreen;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px; cursor:pointer;">Ga Naar Home</button>
+        <button onclick="redirect('/')" type="button" style="border-radius: 8px; background-color: lightseagreen;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px; cursor:pointer;">Terug naar Home</button>
     </div>
     </div>
 </body>
