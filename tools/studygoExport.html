@@ -12,7 +12,18 @@
     <script src="/data/js/studygoReadList.js"></script>
     <title>Study Go Export | Kabab's Site</title>
     <style>
+        .container-adadadadada {
+            padding-bottom: 64px;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
             background: rgb(36, 14, 62);
         }
         .body {
@@ -136,6 +147,12 @@
         }
         input {
             border: none;
+        }
+        .breadcrumb-bg {
+            background: rgba(255,255,255,0.85);
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.07);
         }
     </style>
 </head>
@@ -326,5 +343,17 @@
 </div>
 </div>
 </div>
+<footer style="margin-top: auto;">
+    <div class="container" style="color: white;">
+        <div class="row">
+            <div class="col-md-6">
+                <p>Gelicenseerd onder gnu-gpl.</p>
+            </div>
+            <div class="col-md-6" style="text-align: right;">
+                <p>Deze website is niet op enige manier geassocieerd met WRTS / StudyGo</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
