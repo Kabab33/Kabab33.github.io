@@ -118,6 +118,9 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 100;
+  color: #fff;
+  padding: 12px 0;
 }
 .breadcrumb-bg {
     background: rgba(255,255,255,0.85);
