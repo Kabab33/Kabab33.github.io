@@ -1,12 +1,31 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
-<i data-lucide="volume-2" class="my-class"></i>
-<i data-lucide="x"></i>
-<i data-lucide="menu"></i>
-
-<script src="https://unpkg.com/lucide@latest"></script>
+<p id="p">Hier komt text</p>
+<button onclick="getText()">zet naar p</button>
+<form>
+    <label for="input">Text: </label><input type="text" id="input" placeholder="Type hier iets">
+    <button type="button" onclick="setText()">Zet text</button>
+</form>
 <script>
-    lucide.createIcons();
+    function setText() {
+        const input = document.getElementById("input").value;
+        window.localStorage.setItem("text", input);
+    }
+    function  getText() {
+        var text = window.localStorage.getItem("text");
+        if (text) {
+            document.getElementById("p").innerText = text;
+        } else {
+            document.getElementById("p").innerText = "Geen text gevonden";
+        }
+    }
 </script>
 
 </body>
+</html>
